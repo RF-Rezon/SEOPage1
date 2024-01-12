@@ -1,6 +1,6 @@
-
 import SingleCard from './../SingleCard/SingleCard';
 function SingleColumn({singleCol}) {
+  
   return (
     // 
     <>
@@ -9,7 +9,7 @@ function SingleColumn({singleCol}) {
             <div className="w-[90%] mx-auto pb-4 pt-5 mb-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-x-2">
-                  {singleCol?.color && (<div className={`bg-${singleCol.color}-600 h-6 w-5 rounded-l-xl`}></div>)}
+                 {singleCol?.color && (<div className={`bg-${singleCol.color}-600 h-6 w-5 rounded-l-xl block`}></div>)}
                   <p className="text-gray-700 font-semibold text-base">
                     {singleCol?.operation}
                   </p>
@@ -20,7 +20,7 @@ function SingleColumn({singleCol}) {
               </div>
             </div>
             <div className='max-h-[85vh] w-full mx-auto pb-3 overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-700' scrollbar>
-              {singleCol?.cards?.map((singleCard)=> <SingleCard singleCard={singleCard} />)}
+              {singleCol?.cards?.map((singleCard)=> <SingleCard singleCard={singleCard} key={singleCard.id}/>)}
             </div>
           </div>
         </div>
